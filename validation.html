@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="formValidation.js" defer></script>
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
@@ -12,8 +13,8 @@
       <h1>Create New Task</h1>
       <div>
         <label for="newTask">New Task</label>
-        <input type="text" id="newTask" required>        
-        <p id="newTaskErr">Required and must contain no html characters</p>
+        <input type="text" id="newTask">        
+        <p id="newTaskErr" class="require">Required and must contain no html characters</p>
       </div>
       <div class="">
         <label for="taskDescription">Task Description:</label>
@@ -23,14 +24,21 @@
       <div class="">
         <label for="dueDate">Set Task Due Date</label>
         <input type="date"  id="dueDate">
-        <p id="dueDateInstructions" class="required">Required. Must select date</p>
+        <p id="dueDateInstructions" class="require">Required. Must select date</p>
       </div>
       <div class="">
         <label for="dueTime">Set Task Due Time</label>
         <input type="time"  id="dueTime">
         <p class="required" id="dueTimeInstructions">Required. Must select time</p>
       </div>
-      <button type="submit" id="submt">Submit</button>
+      <button type="submit" id="submit">Submit</button>
     </form>
+
+    <div id="taskOutput">
+      <h2>Tasks Created:</h2>
+      <ul id="myNewTaskList"></ul>
+    </div>
+
+
 </body>
 </html>

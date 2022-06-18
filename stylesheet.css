@@ -63,9 +63,13 @@ button[type="submit"]:hover {
 	background: #109177;
 }
 
+.require {
+	visibility: hidden;
+	margin: 0.5rem;
+	color: red;
+}
 
-
-#newTaskErr {
-display:block;
-color: red;
+.require-show {
+	visibility:visible;
+	color: red;
 }

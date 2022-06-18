@@ -1,12 +1,30 @@
-let subimtButton = document.getElementById("submt") 
+let submitBtn = document.getElementById("submit")
 
-subimtButton.onclick = function myValidation() {
+    submitBtn.onclick = function (e) {
 
-    let newTask = document.getElementById("newTask").value
+    e.preventDefault()
 
-    if (newTask.value.includes("<" + ">")) {
+    let validated = true;
 
-    document.getElementById("newTaskErr").style.display = "block";  
-}
+    let newTask = document.getElementById("newTask")
+
+    let taskErr = document.getElementById("newTaskErr")
+
+    if (newTask.value.includes('<') || newTask.value.includes('>') || newTask.value == "") {
+
+        taskErr.style.visibility = "visible"
+        taskErr.style.color="red";
+
+        validated = false
+        
+    } else {
+        
+        newTaskErr.style.visibility = "hidden"
+    }
+    
+    let list = document.createElement("li");
+    let textNode = document.createTextNode(document.getElementById("newTask").value);
+    list.appendChild(textNode);
+    document.getElementById("myNewTaskList").appendChild(list);
     
 }
